@@ -1,0 +1,139 @@
+package Steps;
+
+
+import java.io.IOException;
+import java.nio.file.Paths;
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
+
+import cucumber.api.java.After;
+import cucumber.api.java.Before;
+import cucumber.api.java.en.And;
+import cucumber.api.java.en.But;
+import cucumber.api.java.en.Given;
+import cucumber.api.java.en.Then;
+import cucumber.api.java.en.When;
+
+public class ContactUsSteps {
+	WebDriver driver;
+	
+	@Before()
+	public void setup() throws IOException {
+		System.setProperty("webdriver.chrome.driver", Paths.get(System.getProperty("user.dir")).toRealPath() + "\\src\\test\\java\\CucumberFramework\\Resources\\chromedriver.exe");
+		this.driver = new ChromeDriver();
+		this.driver.manage().window().maximize();
+		this.driver.manage().timeouts().pageLoadTimeout(120, TimeUnit.SECONDS);
+		this.driver.manage().timeouts().setScriptTimeout(60,TimeUnit.SECONDS);
+		
+	}
+	
+	@After
+	public void tearDown() throws InterruptedException {
+		Thread.sleep(3000);
+		this.driver.manage().deleteAllCookies();
+		this.driver.quit();
+		this.driver = null;
+	}
+	
+	@Given("^I access webdriveruniversity\\.com$")
+	public void i_access_webdriveruniversity_com() throws Throwable {
+		driver.get("http://www.webdriveruniversity.com");
+
+	}
+
+	@When("^I click on the contat us button$")
+	public void i_click_on_the_contat_us_button() throws Throwable {
+	    driver.findElement(By.id("contact-us")).click();
+	}
+
+	@And("^I enter a firstname$")
+	public void i_enter_a_firstname() throws Throwable {
+		@SuppressWarnings("unused")
+		String winHandlerBefore = driver.getWindowHandle();
+	
+		for(String winHandler: driver.getWindowHandles()) {
+			driver.switchTo().window(winHandler);
+		}
+		
+		driver.findElement(By.name("first_name")).sendKeys("Marvin");
+	    
+	}
+
+	@And("^I enter a lastname$")
+	public void i_enter_a_lastname() throws Throwable {
+		driver.findElement(By.name("last_name")).sendKeys("Calizo");
+	    
+	}
+
+	@And("^I enter an email address$")
+	public void i_enter_an_email_address() throws Throwable {
+	    driver.findElement(By.name("email")).sendKeys("marvssulit@gmail.com");
+	}
+
+	@And("^I enter comments$")
+	public void i_enter_comments() throws Throwable {
+	   driver.findElement(By.name("message")).sendKeys("This is a Test");
+	}
+
+	@When("^I click the submit button$")
+	public void i_click_the_submit_button() throws Throwable {
+		driver.findElement(By.xpath(".//input[@type='submit']")).click();
+	    
+	}
+
+	@Then("^The information should be successfully be submitted via contact us form$")
+	public void the_information_should_be_successfully_be_submitted_via_contact_us_form() throws Throwable {
+		Thread.sleep(3000);
+		WebElement ThankYouMessage =  driver.findElement(By.xpath("//div[@id='contact_reply']"));
+		Assert.assertEquals(true, ThankYouMessage.isDisplayed());
+	    
+	}
+   
+	@And("^I enter a invalid firstname$")
+	public void i_enter_a_invalid_firstname() throws Throwable {
+		@SuppressWarnings("unused")
+		String winHandlerBefore = driver.getWindowHandle();
+	
+		for(String winHandler: driver.getWindowHandles()) {
+			driver.switchTo().window(winHandler);
+		}
+		
+		driver.findElement(By.name("first_name")).sendKeys("$#$%");
+	}
+
+	@And("^I enter a invalid lastname$")
+	public void i_enter_a_invalid_lastname() throws Throwable {
+		driver.findElement(By.name("last_name")).sendKeys("&^%%&*");
+	}
+
+	@And("^I enter an invalid email address$")
+	public void i_enter_an_invalid_email_address() throws Throwable {
+		driver.findElement(By.name("email")).sendKeys("sasassa.com");
+	}
+
+	@And("^I enter no comments$")
+	public void i_enter_no_comments() throws Throwable {
+		driver.findElement(By.name("message")).isEnabled();
+	}
+
+	@Then("^The user should also be notified of the problem$")
+	public void the_user_should_also_be_notified_of_the_problem() throws Throwable {
+	   
+	}
+
+	@When("^I click on the reset button$")
+	public void i_click_on_the_reset_button() throws Throwable {
+	    
+	}
+
+	@Then("^The information which listed by the user on the contact us form should be removed$")
+	public void the_information_which_listed_by_the_user_on_the_contact_us_form_should_be_removed() throws Throwable {
+	   
+	}
+	
+}

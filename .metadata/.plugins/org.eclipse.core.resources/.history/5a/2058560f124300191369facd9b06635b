@@ -1,0 +1,86 @@
+package Steps;
+
+import cucumber.api.PendingException;
+import cucumber.api.java.en.Given;
+import cucumber.api.java.en.Then;
+import cucumber.api.java.en.When;
+
+public class ContactUsSteps {
+	@Given("^I access webdriveruniversity\\.com$")
+	public void i_access_webdriveruniversity_com() throws Throwable {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new PendingException();
+	}
+
+	@When("^I click on the contat us button$")
+	public void i_click_on_the_contat_us_button() throws Throwable {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new PendingException();
+	}
+
+	@When("^I enter a firstname$")
+	public void i_enter_a_firstname() throws Throwable {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new PendingException();
+	}
+
+	@When("^I enter a lastname$")
+	public void i_enter_a_lastname() throws Throwable {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new PendingException();
+	}
+
+	@When("^I enter an email address$")
+	public void i_enter_an_email_address() throws Throwable {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new PendingException();
+	}
+
+	@When("^I enter comments$")
+	public void i_enter_comments() throws Throwable {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new PendingException();
+	}
+
+	@When("^I click the submit button$")
+	public void i_click_the_submit_button() throws Throwable {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new PendingException();
+	}
+
+	@Then("^The information should be successfully be submitted via contact us form$")
+	public void the_information_should_be_successfully_be_submitted_via_contact_us_form() throws Throwable {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new PendingException();
+	}
+
+	@When("^I enter a invalid firstname$")
+	public void i_enter_a_invalid_firstname() throws Throwable {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new PendingException();
+	}
+
+	@When("^I enter a invalid lastname$")
+	public void i_enter_a_invalid_lastname() throws Throwable {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new PendingException();
+	}
+
+	@When("^I enter an invalid email address$")
+	public void i_enter_an_invalid_email_address() throws Throwable {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new PendingException();
+	}
+
+	@When("^I enter no comments$")
+	public void i_enter_no_comments() throws Throwable {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new PendingException();
+	}
+
+	@Then("^The user should also be notified of the problem$")
+	public void the_user_should_also_be_notified_of_the_problem() throws Throwable {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new PendingException();
+	}
+}

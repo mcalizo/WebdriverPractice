@@ -1,0 +1,47 @@
+package Utils;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
+
+public class DriverFactory {
+	
+	public static WebDriver driver;
+	
+	try {
+		
+		ReadConfigFile file = new ReadConfigFile();
+		String browserName = file.getBrowser();
+		
+		Switch(browserName) {
+			
+			case "firefox":
+			if (null == driver) {
+				System.setProperty("webdriver.gecko.driver", Constant.GECKO_DRIVER_DIRECTORY);
+				DesiredCapabilities capabilities=DesiredCapabilities.firefox();
+				driver = new FirefoxDriver();
+				
+			}
+			break;
+			
+			
+			case "chrome":
+			if (null == driver)	{
+				
+			}
+			break;
+			
+			case "ie":
+			if (null == driver)	{
+					
+			}
+			break;
+			
+		}
+	} catch (Exception e) {
+		
+	} finally {
+		
+		
+	}
+
+}

@@ -1,0 +1,12 @@
+Feature: If a user clicks on the reset button then all information should be removed from the contact us form
+
+
+Scenario: Submit information using contact us form, when click on the reset button then information shoild be removed
+	Given I access webdriveruniversity.com
+	When I click on the contat us button
+	And I enter a username
+	And I enter a lastname
+	And I enter an email address
+	And I enter comments
+	When I click on the reset button
+	Then The information which listed by the user on the contact us form should be removed

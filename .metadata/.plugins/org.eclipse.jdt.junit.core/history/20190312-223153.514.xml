@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="MainRunner" project="CucumberFramework" tests="36" started="36" failures="0" errors="0" ignored="0">
+  <testsuite name="CucumberFramework.Runner.MainRunner" time="100.608">
+    <testsuite name="Feature: Submit data to webdriveruniversity.com using contact us form" time="57.102">
+      <testsuite name="Scenario: Submit information using contact us form" time="15.834">
+        <testcase name="Given I access webdriveruniversity.com" classname="Scenario: Submit information using contact us form" time="0.198"/>
+        <testcase name="When I click on the contat us button" classname="Scenario: Submit information using contact us form" time="1.251"/>
+        <testcase name="And I enter a firstname" classname="Scenario: Submit information using contact us form" time="0.13"/>
+        <testcase name="And I enter a lastname" classname="Scenario: Submit information using contact us form" time="0.207"/>
+        <testcase name="And I enter an email address" classname="Scenario: Submit information using contact us form" time="0.127"/>
+        <testcase name="And I enter comments" classname="Scenario: Submit information using contact us form" time="2.989"/>
+        <testcase name="When I click the submit button" classname="Scenario: Submit information using contact us form" time="3.057"/>
+        <testcase name="Then The information should be successfully be submitted via contact us form" classname="Scenario: Submit information using contact us form" time="7.875"/>
+      </testsuite>
+      <testsuite name="Scenario: Submit a invalid information in contact us form" time="14.481">
+        <testcase name="Given I access webdriveruniversity.com" classname="Scenario: Submit a invalid information in contact us form" time="0.468"/>
+        <testcase name="When I click on the contat us button" classname="Scenario: Submit a invalid information in contact us form" time="5.356"/>
+        <testcase name="And I enter a invalid firstname" classname="Scenario: Submit a invalid information in contact us form" time="0.157"/>
+        <testcase name="And I enter a invalid lastname" classname="Scenario: Submit a invalid information in contact us form" time="0.139"/>
+        <testcase name="And I enter an invalid email address" classname="Scenario: Submit a invalid information in contact us form" time="0.032"/>
+        <testcase name="And I enter no comments" classname="Scenario: Submit a invalid information in contact us form" time="0.561"/>
+        <testcase name="When I click the submit button" classname="Scenario: Submit a invalid information in contact us form" time="0.001"/>
+        <testcase name="Then The user should also be notified of the problem" classname="Scenario: Submit a invalid information in contact us form" time="7.766"/>
+      </testsuite>
+      <testsuite name="Scenario: Submit information using contact us form, when click on the reset button then information should be removed" time="9.439">
+        <testcase name="Given I access webdriveruniversity.com" classname="Scenario: Submit information using contact us form, when click on the reset button then information should be removed" time="0.173"/>
+        <testcase name="When I click on the contat us button" classname="Scenario: Submit information using contact us form, when click on the reset button then information should be removed" time="1.218"/>
+        <testcase name="And I enter a firstname" classname="Scenario: Submit information using contact us form, when click on the reset button then information should be removed" time="0.088"/>
+        <testcase name="And I enter a lastname" classname="Scenario: Submit information using contact us form, when click on the reset button then information should be removed" time="0.129"/>
+        <testcase name="And I enter an email address" classname="Scenario: Submit information using contact us form, when click on the reset button then information should be removed" time="0.097"/>
+        <testcase name="And I enter comments" classname="Scenario: Submit information using contact us form, when click on the reset button then information should be removed" time="0.069"/>
+        <testcase name="When I click on the reset button" classname="Scenario: Submit information using contact us form, when click on the reset button then information should be removed" time="0.02"/>
+        <testcase name="Then The information which listed by the user on the contact us form should be removed" classname="Scenario: Submit information using contact us form, when click on the reset button then information should be removed" time="7.644"/>
+      </testsuite>
+    </testsuite>
+    <testsuite name="Feature: Login to account at webdriveruniversity.com using login portal" time="35.302">
+      <testsuite name="Scenario Outline: Login with credentials" time="35.302">
+        <testsuite name="Examples:" time="35.302">
+          <testsuite name="| http://www.webdriveruniversity.com | user1 | pass1 | validation failed |" time="13.268">
+            <testcase name="Given user navigates to &quot;http://www.webdriveruniversity.com&quot;" classname="| http://www.webdriveruniversity.com | user1 | pass1 | validation failed |" time="0.183"/>
+            <testcase name="When user clicks on the login portal button" classname="| http://www.webdriveruniversity.com | user1 | pass1 | validation failed |" time="5.224"/>
+            <testcase name="And user enters the &quot;user1&quot; username" classname="| http://www.webdriveruniversity.com | user1 | pass1 | validation failed |" time="0.127"/>
+            <testcase name="And user enters the &quot;pass1&quot; password" classname="| http://www.webdriveruniversity.com | user1 | pass1 | validation failed |" time="0.085"/>
+            <testcase name="When user clicks the login button" classname="| http://www.webdriveruniversity.com | user1 | pass1 | validation failed |" time="0.016"/>
+            <testcase name="Then the user should be presented with the following alert &quot;validation failed&quot;" classname="| http://www.webdriveruniversity.com | user1 | pass1 | validation failed |" time="7.633"/>
+          </testsuite>
+          <testsuite name="| http://www.webdriveruniversity.com | webdriver | webdriver123 | validation succeeded |" time="13.65">
+            <testcase name="Given user navigates to &quot;http://www.webdriveruniversity.com&quot;" classname="| http://www.webdriveruniversity.com | webdriver | webdriver123 | validation succeeded |" time="0.187"/>
+            <testcase name="When user clicks on the login portal button" classname="| http://www.webdriveruniversity.com | webdriver | webdriver123 | validation succeeded |" time="5.223"/>
+            <testcase name="And user enters the &quot;webdriver&quot; username" classname="| http://www.webdriveruniversity.com | webdriver | webdriver123 | validation succeeded |" time="0.109"/>
+            <testcase name="And user enters the &quot;webdriver123&quot; password" classname="| http://www.webdriveruniversity.com | webdriver | webdriver123 | validation succeeded |" time="0.093"/>
+            <testcase name="When user clicks the login button" classname="| http://www.webdriveruniversity.com | webdriver | webdriver123 | validation succeeded |" time="0.009"/>
+            <testcase name="Then the user should be presented with the following alert &quot;validation succeeded&quot;" classname="| http://www.webdriveruniversity.com | webdriver | webdriver123 | validation succeeded |" time="8.029"/>
+          </testsuite>
+        </testsuite>
+      </testsuite>
+    </testsuite>
+  </testsuite>
+</testrun>

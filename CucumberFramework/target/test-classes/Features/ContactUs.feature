@@ -1,0 +1,33 @@
+Feature: Submit data to webdriveruniversity.com using contact us form
+	A user should be able to submit information via contact us form
+	If a user clicks on the reset button then all information should be removed from the contact us form
+
+
+Background:
+	Given I access webdriveruniversity.com
+	When I click on the contat us button 	
+	
+Scenario: Submit information using contact us form
+	And I enter a firstname
+	And I enter a lastname
+	And I enter an email address
+	And I enter comments
+	When I click the submit button
+	Then The information should be successfully be submitted via contact us form
+	
+	
+Scenario: Submit a invalid information in contact us form
+	And I enter a invalid firstname
+	And I enter a invalid lastname
+	And I enter an invalid email address
+	And I enter no comments
+	When I click the submit button 
+	Then The user should also be notified of the problem
+	
+Scenario: Submit information using contact us form, when click on the reset button then information should be removed
+	And I enter a firstname
+	And I enter a lastname
+	And I enter an email address
+	And I enter comments
+	When I click on the reset button
+	Then The information which listed by the user on the contact us form should be removed	 

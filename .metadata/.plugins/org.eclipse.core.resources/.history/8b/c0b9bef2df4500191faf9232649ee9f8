@@ -1,0 +1,13 @@
+package Steps;
+
+import Utils.DriverFactory;
+import cucumber.api.java.Before;
+
+public class MasterHooks extends DriverFactory {
+	
+	@Before
+	public void setup() {
+		driver = getDriver(); 
+	}
+
+}

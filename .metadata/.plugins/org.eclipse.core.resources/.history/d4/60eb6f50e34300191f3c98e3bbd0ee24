@@ -1,0 +1,32 @@
+Feature: Login to account at webdriveruniversity.com using login portal
+
+#Background:
+#	Given I access webdriveruniversity
+#	When I click on the login portal button
+#	And I enter a username
+	
+#Scenario: Login to account with a valid password
+#	And I enter a "valid" password
+#	When I click on the login button
+#	Then I should be presented with a successful validation alert
+	
+#Scenario: Login to account with a invalid password
+#	And I enter a "invalid" password
+#	And I click the login button
+#	Then I should be presented with a successful validation alert 	 
+	
+Scenario Outline: Login with credentials
+	Given user navigates to "<url>"
+	When user clicks on the login portal button
+	And user enters the "<username>" username
+	And user enters the "<password>" password
+	When user clicks the login button
+	Then the user should be presented with the following alert "<message>"	
+	 
+	Examples:
+		|					url					|	username	|	password		| 	message					|
+		|	http://www.webdriveruniversity.com	|	user1		|	pass1			|	validation failed		|
+		|	http://www.webdriveruniversity.com	|	webdriver	|	webdriver123	| 	validation successful	|
+		 
+		
+		
